@@ -1,0 +1,171 @@
+# Lattice Pin File (LPF) for RPC DRAM Controller on ECP5
+# Generated from RpcDramDramOnly.v Verilog interface
+# This is a template - modify pin assignments for your specific board
+
+# =============================================================================
+# Clock and Reset
+# =============================================================================
+
+# System clock input (100MHz typical for ECP5)
+# LOCATE COMP "clk" SITE "P3";
+IOBUF PORT "clk" IO_TYPE=LVCMOS33;
+
+# Reset input (active high)
+# LOCATE COMP "reset" SITE "P4";
+IOBUF PORT "reset" IO_TYPE=LVCMOS33;
+
+# =============================================================================
+# DRAM Interface (16-bit x16 DDR interface)
+# =============================================================================
+
+# DRAM Clock outputs (differential)
+# LOCATE COMP "io_dram_clkP" SITE "A1";
+IOBUF PORT "io_dram_clkP" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dram_clkN" SITE "A2";
+IOBUF PORT "io_dram_clkN" IO_TYPE=LVCMOS33;
+
+# Data bus (bidirectional, 16-bit)
+# LOCATE COMP "io_dramDb[0]" SITE "B1";
+IOBUF PORT "io_dramDb[0]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[1]" SITE "B2";
+IOBUF PORT "io_dramDb[1]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[2]" SITE "C1";
+IOBUF PORT "io_dramDb[2]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[3]" SITE "C2";
+IOBUF PORT "io_dramDb[3]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[4]" SITE "D1";
+IOBUF PORT "io_dramDb[4]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[5]" SITE "D2";
+IOBUF PORT "io_dramDb[5]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[6]" SITE "E1";
+IOBUF PORT "io_dramDb[6]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[7]" SITE "E2";
+IOBUF PORT "io_dramDb[7]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[8]" SITE "F1";
+IOBUF PORT "io_dramDb[8]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[9]" SITE "F2";
+IOBUF PORT "io_dramDb[9]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[10]" SITE "G1";
+IOBUF PORT "io_dramDb[10]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[11]" SITE "G2";
+IOBUF PORT "io_dramDb[11]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[12]" SITE "H1";
+IOBUF PORT "io_dramDb[12]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[13]" SITE "H2";
+IOBUF PORT "io_dramDb[13]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[14]" SITE "J1";
+IOBUF PORT "io_dramDb[14]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDb[15]" SITE "J2";
+IOBUF PORT "io_dramDb[15]" IO_TYPE=LVCMOS33;
+
+# DQS signals (bidirectional, 2-bit)
+# LOCATE COMP "io_dramDqs[0]" SITE "K1";
+IOBUF PORT "io_dramDqs[0]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDqs[1]" SITE "K2";
+IOBUF PORT "io_dramDqs[1]" IO_TYPE=LVCMOS33;
+
+# DQS1 signals (bidirectional, 2-bit)
+# LOCATE COMP "io_dramDqs1[0]" SITE "L1";
+IOBUF PORT "io_dramDqs1[0]" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dramDqs1[1]" SITE "L2";
+IOBUF PORT "io_dramDqs1[1]" IO_TYPE=LVCMOS33;
+
+# Control signals
+# LOCATE COMP "io_dram_csN_0" SITE "M1";
+IOBUF PORT "io_dram_csN_0" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dram_stb" SITE "M2";
+IOBUF PORT "io_dram_stb" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dram_resetN" SITE "N1";
+IOBUF PORT "io_dram_resetN" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_dram_odt" SITE "N2";
+IOBUF PORT "io_dram_odt" IO_TYPE=LVCMOS33;
+
+# =============================================================================
+# BMB Interface (if used)
+# =============================================================================
+
+# BMB command interface
+# LOCATE COMP "io_ctrlIO_bmb_cmd_valid" SITE "R1";
+IOBUF PORT "io_ctrlIO_bmb_cmd_valid" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_ctrlIO_bmb_cmd_ready" SITE "R2";
+IOBUF PORT "io_ctrlIO_bmb_cmd_ready" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_ctrlIO_bmb_cmd_payload_we" SITE "T1";
+IOBUF PORT "io_ctrlIO_bmb_cmd_payload_we" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_ctrlIO_bmb_cmd_payload_adr[0]" SITE "T2";
+IOBUF PORT "io_ctrlIO_bmb_cmd_payload_adr[0]" IO_TYPE=LVCMOS33;
+# ... Add more BMB address pins as needed
+
+# BMB response interface
+# LOCATE COMP "io_ctrlIO_bmb_rsp_valid" SITE "U1";
+IOBUF PORT "io_ctrlIO_bmb_rsp_valid" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_ctrlIO_bmb_rsp_ready" SITE "U2";
+IOBUF PORT "io_ctrlIO_bmb_rsp_ready" IO_TYPE=LVCMOS33;
+# ... Add more BMB response pins as needed
+
+# =============================================================================
+# User Interface (if used directly)
+# =============================================================================
+
+# User command interface
+# LOCATE COMP "io_ctrlIO_user_cmd_valid" SITE "V1";
+IOBUF PORT "io_ctrlIO_user_cmd_valid" IO_TYPE=LVCMOS33;
+# LOCATE COMP "io_ctrlIO_user_cmd_ready" SITE "V2";
+IOBUF PORT "io_ctrlIO_user_cmd_ready" IO_TYPE=LVCMOS33;
+# ... Add more user interface pins as needed
+
+# =============================================================================
+# Clock Constraints
+# =============================================================================
+
+# System clock (100MHz for ECP5, will be internally multiplied for DDR)
+FREQUENCY PORT "clk" 100.0 MHz;
+
+# =============================================================================
+# I/O Timing Constraints
+# =============================================================================
+
+# DRAM interface timing for RPC DRAM (800MHz DDR effective rate)
+# Note: RPC DRAM uses 800MHz DDR signaling, but ECP5 may need different constraints
+# based on actual implementation. These are conservative estimates.
+
+# DRAM clock outputs (differential)
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_clkP";
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_clkN";
+
+# Data bus (bidirectional, DDR timing)
+OFFSET IN 1.5 ns BEFORE "clk" PORT "io_dramDb[*]";
+OFFSET OUT 1.5 ns AFTER "clk" PORT "io_dramDb[*]";
+
+# DQS signals (bidirectional, DDR timing)
+OFFSET IN 1.5 ns BEFORE "clk" PORT "io_dramDqs[*]";
+OFFSET OUT 1.5 ns AFTER "clk" PORT "io_dramDqs[*]";
+
+# DQS1 signals (bidirectional, DDR timing)
+OFFSET IN 1.5 ns BEFORE "clk" PORT "io_dramDqs1[*]";
+OFFSET OUT 1.5 ns AFTER "clk" PORT "io_dramDqs1[*]";
+
+# Control signals (SDR timing, but fast)
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_csN_0";
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_stb";
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_resetN";
+OFFSET OUT 2.0 ns AFTER "clk" PORT "io_dram_odt";
+
+# =============================================================================
+# Notes
+# =============================================================================
+# This LPF file is configured for the RPC DRAM Controller Verilog interface.
+# You need to:
+# 1. Update pin locations (SITE) for your specific ECP5 board
+# 2. Verify I/O standards match your board's voltage requirements
+# 3. Adjust timing constraints based on your DRAM module specifications
+# 4. Ensure differential signaling is properly configured for your board
+# 5. The current pin assignments are placeholders and need board-specific mapping
+#
+# RPC DRAM Specifications:
+# - Interface: 16-bit DDR at up to 800MHz effective rate
+# - Clock: Differential SSTL135 outputs
+# - Data: Bidirectional SSTL135 (16-bit DB bus)
+# - Strobe: SSTL135 (STB signal with 90° phase relationship)
+# - Control: SSTL135 (CS, ODT, RESET)
+#
+# For ECP5 evaluation boards, check the board documentation for available pins.
