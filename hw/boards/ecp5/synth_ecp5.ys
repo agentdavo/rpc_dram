@@ -1,0 +1,11 @@
+# Yosys synthesis script for ECP5 FPGA
+# RPC DRAM Controller synthesis for Lattice ECP5
+
+# Read Verilog sources first
+read_verilog RpcDramController.v
+
+# ECP5 synthesis using built-in Yosys command
+synth_ecp5 -top RpcDramDramOnly -json RpcDramController_synth.json
+
+# Print synthesis statistics
+stat
